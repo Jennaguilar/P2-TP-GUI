@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.ejercicio2;
+package Ejercicio2;
 
 
 import javax.swing.* ;
@@ -25,6 +25,17 @@ public class MiniEditor extends javax.swing.JFrame {
         setSize(500,400);
         setTitle("Ejercicio 2: Mini Editor de Texto");
         
+        // Limpiar texto
+       itemLimpiar.addActionListener(e -> {
+        System.out.println("DEBUG: El botón fue presionado"); // Si ves esto en la consola, el botón sí funciona
+        areaTexto.setText(""); 
+    });
+        
+        // Salir
+        itemSalir.addActionListener(e -> {
+        System.exit(0); 
+    });
+    
         //Instanciar JMenu y fijarlo
         JMenuBar barraSuperior = new JMenuBar();
         setJMenuBar(barraSuperior);
@@ -83,13 +94,12 @@ public class MiniEditor extends javax.swing.JFrame {
         menuArchivo = new javax.swing.JMenu();
         itemLimpiar = new javax.swing.JMenuItem();
         itemSalir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         areaTexto.setColumns(20);
         areaTexto.setRows(5);
         jScrollPane1.setViewportView(areaTexto);
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         menuArchivo.setText("Archivo");
 
@@ -101,20 +111,21 @@ public class MiniEditor extends javax.swing.JFrame {
 
         jMenuBar1.add(menuArchivo);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 187, Short.MAX_VALUE))
         );
 
         pack();
@@ -151,7 +162,6 @@ public class MiniEditor extends javax.swing.JFrame {
     private javax.swing.JTextArea areaTexto;
     private javax.swing.JMenuItem itemLimpiar;
     private javax.swing.JMenuItem itemSalir;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu menuArchivo;

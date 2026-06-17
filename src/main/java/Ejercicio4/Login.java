@@ -4,43 +4,20 @@
  */
 package Ejercicio4;
 
-import javax.swing.*;
-import java.util.Arrays;
-
 /**
  *
  * @author JENNIFER
  */
 public class Login extends javax.swing.JFrame {
-    private final char[] CONTRASENA_SECRETA = {'1', '2', '3', '4', '5'};
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form Login
      */
     public Login() {
         initComponents();
-        setTitle("Autenticación Segura");
-        setSize(300, 200);
-        
-        
-        campoContraseña.setEchoChar('*');
-        jButton1.addActionListener(e -> {
-            // Capturamos desde el componente con 'ñ' creado por NetBeans
-            char[] passwordCapturado = campoContraseña.getPassword();
-
-            // Comparación segura O(K)
-            if (Arrays.equals(passwordCapturado, CONTRASENA_SECRETA)) {
-                JOptionPane.showMessageDialog(this, "Acceso Correcto");
-            } else {
-                JOptionPane.showMessageDialog(this, "Contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            
-            // Buena práctica: Limpiar rastro en memoria RAM
-            Arrays.fill(passwordCapturado, '0');
-        });
     }
-       
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,83 +28,62 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        campoU = new javax.swing.JTextField();
+        campuU = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         campoContraseña = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnAcceder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Usuario");
 
-        campoU.addActionListener(this::campoUActionPerformed);
-
         jLabel2.setText("Contraseña");
 
         campoContraseña.setText("jPasswordField1");
 
-        jButton1.setText("OK");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(campoContraseña)
-                            .addComponent(campoU))
-                        .addGap(0, 78, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        btnAcceder.setText("OK");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnAcceder))
+                            .addComponent(campoContraseña)
+                            .addComponent(campuU)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel1)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(campuU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAcceder)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void campoUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,13 +109,24 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
     }
+    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    char[] CONTRASENA_SECRETA = {'1', '2', '3', '4', '5'};
+    char[] passwordCapturado = campoContraseña.getPassword();
+
+    if (java.util.Arrays.equals(passwordCapturado, CONTRASENA_SECRETA)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Acceso Correcto");
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Contraseña Incorrecta", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+    
+    java.util.Arrays.fill(passwordCapturado, '0'); // Limpieza de seguridad
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAcceder;
     private javax.swing.JPasswordField campoContraseña;
-    private javax.swing.JTextField campoU;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField campuU;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

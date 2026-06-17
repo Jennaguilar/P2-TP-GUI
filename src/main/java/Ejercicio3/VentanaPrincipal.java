@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.ejercicio3;
+package Ejercicio3;
 
 import javax.swing.*;
 import javax.swing.JFrame;
@@ -118,6 +118,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void botonConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfigurarActionPerformed
         // TODO add your handling code here:
+        Dialogo dialogo = new Dialogo(this, true);
+        dialogo.setLocationRelativeTo(this);
+        dialogo.setVisible(true);
+        
+        
     }//GEN-LAST:event_botonConfigurarActionPerformed
 
     /**

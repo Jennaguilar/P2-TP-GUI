@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package com.mycompany.ejercicio3;
+package Ejercicio3;
 
 /**
  *
@@ -27,18 +27,17 @@ public class Dialogo extends javax.swing.JDialog {
         StringBuilder seleccionadas = new StringBuilder();
         
         if (checkOscuro.isSelected()) seleccionadas.append("Modo Oscuro, ");
-        if (checkNoti.isSelected()) seleccionadas.append("Notificaciones, ");
-        if (checkAutoG.isSelected()) seleccionadas.append("Autoguardado");
-        
-        String resultado = seleccionadas.toString();
-        if (resultado.isEmpty()) resultado = "Ninguna";
-        
-        VentanaPrincipal padre = (VentanaPrincipal) this.getParent();
-        if (padre != null) {
-            padre.actualizarOpciones(resultado);
-        }
-        
-        this.dispose(); 
+    if (checkNoti.isSelected()) seleccionadas.append("Notificaciones, ");
+    if (checkAutoG.isSelected()) seleccionadas.append("Autoguardado, ");
+    
+    String resultado = seleccionadas.length() > 0 ? 
+                       seleccionadas.substring(0, seleccionadas.length() - 2) : "Ninguna";
+    
+    VentanaPrincipal padre = (VentanaPrincipal) this.getParent();
+    if (padre != null) {
+        padre.actualizarOpciones(resultado);
+    }
+    this.dispose(); 
     }
     
     
